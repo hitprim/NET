@@ -1,0 +1,30 @@
+swagger: '2.0'
+info:
+  title: Sample API
+  description: Sample API using Swagger and OpenAPI Specification
+  version: 1.0.0
+host: localhost:8080
+schemes:
+  - http
+paths:
+  /hello:
+    get:
+      summary: Returns a greeting message
+      produces:
+        - text/plain
+      responses:
+        200:
+          description: Greeting message
+          schema:
+            type: string
+    post:
+      summary: Sets a greeting message
+      parameters:
+        - name: message
+          in: body
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Message set successfully
